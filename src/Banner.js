@@ -20,10 +20,39 @@ function Banner() {
         }
         fetchData();
     }, [])
+    
+    function txt_slice(str, len, ending) {
+        if (len == null) {
+          len = 100;
+        }
+        if (ending == null) {
+          ending = '...';
+        }
+        if (str?.length > len) {
+          return str.substring(0, len - ending.length) + ending;
+        } else {
+          return str;
+        }
+      };
 
     return (
-        <div className= 'banner'>
-            {movie.title}
+        <div className= 'banner'
+            style = {{
+                backgroundSize : 'cover',
+                backgroundImage : `URL("https://image.tmdb.org/t/p/w500${movie?.backdrop_path}")`,
+                backgroundPosition: 'center center',
+                marginBottom: '15px'
+            }}
+        >
+            <div className= 'banner_content'>
+                <h1 className = 'banner_name'>{movie?.title || movie?.original_title || movie?.name}</h1>
+                <div className = 'banner_buttons'>
+                    <button className = 'button'>Play</button>
+                    <button className = 'button'>My List</button>
+                </div>
+                <h1 className = 'desc'>{txt_slice(movie?.overview, 400)}</h1>
+            </div>
+            <div className= 'banner_fade'/>
         </div>
     )
 }

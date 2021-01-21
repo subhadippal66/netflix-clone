@@ -12,7 +12,7 @@ import Banner from './Banner'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Banner/>
       <Row title = 'Netflix Original' fetchUrl = {request.fetchNetflixOriginal}/>
       <Row title = 'Top Rated' fetchUrl = {request.fetchTopRated}/>
