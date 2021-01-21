@@ -2,6 +2,7 @@ import './App.css';
 import Row from "./row";
 import request from './request'
 import Banner from './Banner'
+import Nav from './Nav';
 
 // const movieData = null;
 // callAPI() {
@@ -13,6 +14,7 @@ import Banner from './Banner'
 function App() {
   return (
     <div className="app">
+      <Nav/>
       <Banner/>
       <Row title = 'Netflix Original' fetchUrl = {request.fetchNetflixOriginal}/>
       <Row title = 'Top Rated' fetchUrl = {request.fetchTopRated}/>

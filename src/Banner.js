@@ -40,8 +40,7 @@ function Banner() {
             style = {{
                 backgroundSize : 'cover',
                 backgroundImage : `URL("https://image.tmdb.org/t/p/w500${movie?.backdrop_path}")`,
-                backgroundPosition: 'center center',
-                marginBottom: '15px'
+                backgroundPosition: 'center center'
             }}
         >
             <div className= 'banner_content'>
